@@ -1,0 +1,85 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Space Mono', monospace;
+  background-color: #80ED99;
+}
+
+button {
+  border: none;
+  outline: none;
+  font: inherit;
+  color: inherit;
+  background: none
+}
+
+.keyboard {
+  width: max-content;
+  display: grid;
+  padding: 20px;
+  border-radius: 10px;
+  background: #C7F9CC;
+  color: #22577A;
+  grid-template-columns: repeat(31, 25px);
+  grid-template-rows: repeat(5, 50px);
+  gap: 5px;
+}
+
+.key {
+  font-size: 20px;
+  border: 1px solid #22577A;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.key--general {
+  background-color: #57CC99;
+  grid-column: span 2;
+}
+
+.key--alt,
+.key--ctrl,
+.key--win,
+.key--del {
+  grid-column: span 2;
+}
+
+.key--ctrl-left {
+  grid-column: span 3;
+}
+
+.key:not(.key--general) {
+  background-color: #38A3A5;
+}
+
+.key--arrow {
+  background-color: #38A3A5;
+}
+
+.key--shift,
+.key--caps {
+  grid-column: span 4;
+}
+
+.key--shift-left {
+  grid-column: span 5;
+}
+
+.key--tab {
+  grid-column: span 3;
+}
+
+.key--enter,
+.key--backspace {
+  grid-column: span 5;
+}
+
+.key--spacebar {
+  grid-column: span 14;
+}
