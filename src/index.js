@@ -254,4 +254,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   keyboard.append(createKeys());
+
+  window.addEventListener('keydown', ({ code }) => {
+    if (keys.find((el) => el.code === code)) {
+      document.querySelector(`[data-key-code="${code}"]`).classList.add('active');
+    }
+  });
+
+  window.addEventListener('keyup', ({ code }) => {
+    if (keys.find((el) => el.code === code)) {
+      document.querySelector(`[data-key-code="${code}"]`).classList.remove('active');
+    }
+  });
 });
