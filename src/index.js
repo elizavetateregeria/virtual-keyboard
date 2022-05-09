@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const { body } = document;
+
   class Keyboard {
     constructor(className, parent) {
       this.className = className;
@@ -13,7 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  new Keyboard('keyboard', body).render();
+  const myKeyboard = new Keyboard('keyboard', body);
+  myKeyboard.render();
   const keyboard = document.querySelector('.keyboard');
 
   const keys = [
@@ -255,9 +257,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   keyboard.append(createKeys());
 
-  window.addEventListener('keydown', ({ code }) => {
-    if (keys.find((el) => el.code === code)) {
-      document.querySelector(`[data-key-code="${code}"]`).classList.add('active');
+  window.addEventListener('keydown', (e) => {
+    e.preventDefault();
+    if (keys.find((el) => el.code === e.code)) {
+      document.querySelector(`[data-key-code="${e.code}"]`).classList.add('active');
     }
   });
 
