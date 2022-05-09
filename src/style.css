@@ -32,10 +32,20 @@ button {
 }
 
 .key {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   font-size: 20px;
   border: 1px solid #22577A;
   border-radius: 5px;
   text-align: center;
+  box-shadow: 2px 2px 0 0 #8367c7;
+  transition: all 0.2s;
+}
+
+.key:hover {
+  font-weight: 700;
+  color: #f0fff1;
 }
 
 .key--general {
@@ -44,34 +54,47 @@ button {
 }
 
 .key--alt,
+.key--shift,
+.key--enter,
+.key--backspace,
+.key--ctrl,
+.key--tab,
+.key--capslock,
+.key--win,
+.key--arrow,
+.key--del {
+  background-color: #38A3A5;
+}
+
+.key--alt,
 .key--ctrl,
 .key--win,
+.key--arrow,
 .key--del {
   grid-column: span 2;
 }
 
 .key--ctrl-left {
   grid-column: span 3;
-}
-
-.key:not(.key--general) {
-  background-color: #38A3A5;
-}
-
-.key--arrow {
-  background-color: #38A3A5;
+  grid-row: 5;
 }
 
 .key--shift,
-.key--caps {
+.key--capslock {
   grid-column: span 4;
 }
 
 .key--shift-left {
   grid-column: span 5;
+  grid-row: 4;
+}
+
+.key--capslock {
+  grid-row: 3;
 }
 
 .key--tab {
+  grid-row: 2;
   grid-column: span 3;
 }
 
@@ -82,4 +105,11 @@ button {
 
 .key--spacebar {
   grid-column: span 14;
+  background-color: #57CC99;
+}
+
+.active {
+  box-shadow: none;
+  transform: translate(2px, 2px);
+  background-color: #e3c9ff;
 }
